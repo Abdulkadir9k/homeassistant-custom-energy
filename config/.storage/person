@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "abdulkadir_saloum",
+        "name": "Abdulkadir Saloum",
+        "user_id": "22f5126602d64cc59220481768f009ed",
+        "device_trackers": []
+      }
+    ]
+  }
+}

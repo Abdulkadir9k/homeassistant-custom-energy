@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.energy_prediction",
+  "data": {
+    "config": {
+      "title": "Energy Prediction",
+      "views": [
+        {
+          "title": "Energy Prediction",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "title": "Prediction Inputs",
+                  "show_header_toggle": false,
+                  "entities": [
+                    {
+                      "entity": "input_select.appliance_type",
+                      "name": "Appliance Target"
+                    },
+                    {
+                      "entity": "input_number.outdoor_temperature",
+                      "name": "Outdoor Temp (°C)"
+                    },
+                    {
+                      "entity": "input_number.household_size",
+                      "name": "Household Size"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.energy_consumption_predictor",
+                  "name": "Predicted Energy (Next Interval)",
+                  "unit": "kWh",
+                  "min": 0,
+                  "max": 5,
+                  "severity": {
+                    "green": 0,
+                    "yellow": 1.5,
+                    "red": 3
+                  }
+                },
+                {
+                  "type": "markdown",
+                  "title": "Prediction Explanation",
+                  "content": "{# Check if the sensor has a valid numeric state #} {% if states('sensor.energy_consumption_predictor') not in ['unknown', 'unavailable', 'error'] %}\n  {# Display basic prediction info #}\n  **Prediction:** {{ states('sensor.energy_consumption_predictor') | round(3) }} kWh\n  (Base Avg: {{ state_attr('sensor.energy_consumption_predictor', 'base_value') | round(3) }} kWh) <br>\n  **Status:** {{ state_attr('sensor.energy_consumption_predictor', 'status') }}\n  (Processed in: {{ state_attr('sensor.energy_consumption_predictor', 'prediction_time_sec') }} sec) <br>\n\n  ---\n  {# Display the NEW natural language summary attribute #}\n  **Explanation Summary:** <br>\n  {% set summary = state_attr('sensor.energy_consumption_predictor', 'explanation_summary') %}\n  {% if summary %}\n    {{ summary | replace('\\n', '<br>') }} {# Replace newlines with HTML line breaks for display #}\n  {% else %}\n    Explanation summary is currently unavailable.\n  {% endif %}\n  ---\n\n  <br> {# Add some space #}\n  {# Display inputs used for context #}\n  *Inputs Used:*\n  Appl: {{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs')['Appliance Type'] }},\n  Temp: {{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs')['Outdoor Temperature (°C)'] }}°C,\n  Size: {{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs')['Household Size'] }}\n\n  <br>\n  {# Display last updated time #}\n  *Last Updated: {{ as_timestamp(state_attr('sensor.energy_consumption_predictor', 'last_updated')) | timestamp_local }}*\n\n{% else %}\n  {# Fallback message if sensor state is invalid #}\n  Prediction is currently unavailable ({{ states('sensor.energy_consumption_predictor') }}). Check logs.\n{% endif %}\n"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "input_boolean.energy_ai_control_enabled"
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "input_text.last_energy_ai_action_explanation"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

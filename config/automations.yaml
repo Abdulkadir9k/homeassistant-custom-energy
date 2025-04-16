@@ -1,0 +1,85 @@
+# automations.yaml
+
+- id: 'energy_prediction_high_alert_12345' # Keep existing ID
+  alias: "Energy Prediction High Alert"
+  description: "Notify when predicted energy consumption is high AND AI control is enabled" # Updated description
+  mode: single
+
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.energy_consumption_predictor
+      above: 2.5 # <-- ADJUST this threshold
+
+  # --- ADDED CONDITION BLOCK ---
+  condition:
+    - condition: state
+      entity_id: input_boolean.energy_ai_control_enabled
+      state: 'on' # Only proceed if the toggle is ON
+    # --- You can ADD other conditions here later ---
+    # Example: Only run between certain hours
+    # - condition: time
+    #   after: '08:00:00'
+    #   before: '22:00:00'
+    # Example: Only run if energy price is high (requires price sensor)
+    # - condition: numeric_state
+    #   entity_id: sensor.your_energy_price
+    #   above: 0.20 # Example price threshold
+  # --- END OF ADDED CONDITION BLOCK ---
+
+  action:
+    # --- Step 1: Define base variables and try direct access ---
+    - variables:
+        prediction_value: "{{ trigger.to_state.state | float(0) | round(3) }}"
+        trigger_threshold: "{{ trigger.above | float(0) }}"
+        prediction_explanation_summary: "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}"
+        # Get the raw attribute directly
+        raw_inputs_attr: "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}"
+        # --- Attempt direct dictionary access using 'is mapping' ---
+        target_appliance: >-
+          {% set data = raw_inputs_attr %}
+          {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}
+        current_temp: >-
+          {% set data = raw_inputs_attr %}
+          {% if data is mapping and 'Outdoor Temperature (°C)' in data %}{{ data['Outdoor Temperature (°C)'] }}{% else %}N/A{% endif %}
+        # --- End direct access attempt ---
+        intended_action_desc: "Sending a notification alert."
+
+    # --- Step 2: Build the Full Explanation String ---
+    # This uses the variables defined directly above
+    - variables:
+        decision_explanation: >
+          High energy prediction triggered action.
+          Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh).
+          Target Appliance: {{ target_appliance }}.
+          Current Temp: {{ current_temp }}°C.
+
+          Reason for high prediction:
+          {{ prediction_explanation_summary | replace('\n', '\n  ') }}
+
+          Action Taken: {{ intended_action_desc }}
+
+    # --- Step 3: Store the Explanation in the input_text helper ---
+    - service: input_text.set_value
+      target:
+        entity_id: input_text.last_energy_ai_action_explanation # Verify this ID
+      data:
+        # Use the decision_explanation variable built in Step 2
+        value: "{{ decision_explanation }}"
+
+    # --- Step 4: Send Notification ---
+    - service: notify.persistent_notification
+      data:
+        title: "Energy AI Alert: High Prediction!"
+        # Use the same decision_explanation variable built in Step 2
+        message: "{{ decision_explanation }}"
+
+
+    # --- Step 5: (Future) Add Actual Device Control Actions HERE ---
+    # Example: Adjust thermostat IF target_appliance was HVAC
+    # - condition: template # Example condition within action sequence
+    #   value_template: "{{ target_appliance == 'HVAC' }}"
+    # - service: climate.set_temperature
+    #   target:
+    #     entity_id: climate.your_thermostat # Change to your entity ID
+    #   data:
+    #     temperature: "{{ (states('input_number.your_comfort_max') | float(24)) + 1 }}" # Adjust based on comfort range + offset

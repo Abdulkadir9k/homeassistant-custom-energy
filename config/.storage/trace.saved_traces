@@ -1,0 +1,1613 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "trace.saved_traces",
+  "data": {
+    "automation.energy_prediction_high_alert_12345": [
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "6cb17bb469b0031d40d1e74d61cc6d93",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-14T14:10:24.326760+00:00",
+            "finish": "2025-04-14T14:10:24.330176+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-14T14:10:24.326794+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.energy_prediction_high_alert",
+                    "state": "on",
+                    "attributes": {
+                      "id": "energy_prediction_high_alert_12345",
+                      "last_triggered": "2025-04-14T14:08:43.957017+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Energy Prediction High Alert"
+                    },
+                    "last_changed": "2025-04-14T14:09:54.263429+00:00",
+                    "last_reported": "2025-04-14T14:09:54.263429+00:00",
+                    "last_updated": "2025-04-14T14:09:54.263429+00:00",
+                    "context": {
+                      "id": "01JRTA572Q8BR1CJNZF3DWV0D1",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "numeric_state",
+                    "entity_id": "sensor.energy_consumption_predictor",
+                    "below": null,
+                    "above": 2.5,
+                    "from_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "1.108",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-14T18:09:54.296337",
+                        "prediction_time_sec": 0.05,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": -0.2408
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.2389
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0757
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Appliance Type_Lights",
+                              "impact": -0.0029
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.02
+                        },
+                        "explanation_summary": "Predicted consumption: 1.11 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': moderately decreased prediction by 0.241 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.239 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.076 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "HVAC",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-14T18:09:54.243689"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-14T14:09:54.296885+00:00",
+                      "last_reported": "2025-04-14T14:09:54.296885+00:00",
+                      "last_updated": "2025-04-14T14:09:54.296885+00:00",
+                      "context": {
+                        "id": "01JRTA573RNRS2DKDD7B8Y6H0Q",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "3.469",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-14T18:10:24.326235",
+                        "prediction_time_sec": 0.03,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": 2.0251
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.1395
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0733
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Hour_sin",
+                              "impact": 0.0068
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 3.47 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.025 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Time Factor (Hour sin): slightly increased prediction by 0.007 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Heater",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-14T18:10:24.298256"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-14T14:10:24.326494+00:00",
+                      "last_reported": "2025-04-14T14:10:24.326494+00:00",
+                      "last_updated": "2025-04-14T14:10:24.326494+00:00",
+                      "context": {
+                        "id": "01JRTA64E6JW87SZ8J3KT40A73",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "description": "numeric state of sensor.energy_consumption_predictor"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-04-14T14:10:24.326818+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-04-14T14:10:24.326834+00:00",
+                "result": {
+                  "result": true,
+                  "state": "on",
+                  "wanted_state": "on"
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-14T14:10:24.327103+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JRTA64E6NPZFA836TTZ3KZ46",
+                    "parent_id": "01JRTA64E6JW87SZ8J3KT40A73",
+                    "user_id": null
+                  },
+                  "prediction_value": 3.469,
+                  "trigger_threshold": 2.5,
+                  "prediction_explanation_summary": "Predicted consumption: 3.47 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.025 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Time Factor (Hour sin): slightly increased prediction by 0.007 kWh.",
+                  "raw_inputs_attr": "{'Appliance Type': 'Heater', 'Outdoor Temperature (\u00b0C)': 20.0, 'Household Size': 3, 'Season': 'Spring/Fall', 'timestamp': Timestamp('2025-04-14 18:10:24.298256')}",
+                  "target_appliance": "Unknown",
+                  "current_temp": "N/A",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-04-14T14:10:24.329035+00:00",
+                "changed_variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: 3.469 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.47 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.025 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Time Factor (Hour sin): slightly increased prediction by 0.007 kWh.\nAction Taken: Sending a notification alert."
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-04-14T14:10:24.329271+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "High energy prediction triggered action. Prediction: 3.469 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.47 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.025 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Time Factor (Hour sin): slightly increased prediction by 0.007 kWh.\nAction Taken: Sending a notification alert.",
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-04-14T14:10:24.329811+00:00",
+                "result": {
+                  "params": {
+                    "domain": "notify",
+                    "service": "persistent_notification",
+                    "service_data": {
+                      "title": "Energy AI Alert: High Prediction!",
+                      "message": "High energy prediction triggered action. Prediction: 3.469 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.47 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.025 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Time Factor (Hour sin): slightly increased prediction by 0.007 kWh.\nAction Taken: Sending a notification alert."
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "energy_prediction_high_alert_12345",
+            "alias": "Energy Prediction High Alert",
+            "description": "Notify when predicted energy consumption is high AND AI control is enabled",
+            "mode": "single",
+            "trigger": [
+              {
+                "platform": "numeric_state",
+                "entity_id": "sensor.energy_consumption_predictor",
+                "above": 2.5
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.energy_ai_control_enabled",
+                "state": "on"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "prediction_value": "{{ trigger.to_state.state | float(0) | round(3) }}",
+                  "trigger_threshold": "{{ trigger.above | float(0) }}",
+                  "prediction_explanation_summary": "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}",
+                  "raw_inputs_attr": "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}",
+                  "target_appliance": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}",
+                  "current_temp": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Outdoor Temperature (\u00b0C)' in data %}{{ data['Outdoor Temperature (\u00b0C)'] }}{% else %}N/A{% endif %}",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              },
+              {
+                "variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh). Target Appliance: {{ target_appliance }}. Current Temp: {{ current_temp }}\u00b0C.\nReason for high prediction: {{ prediction_explanation_summary | replace('\\n', '\\n  ') }}\nAction Taken: {{ intended_action_desc }}\n"
+                }
+              },
+              {
+                "target": {
+                  "entity_id": "input_text.last_energy_ai_action_explanation"
+                },
+                "data": {
+                  "value": "{{ decision_explanation }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "data": {
+                  "title": "Energy AI Alert: High Prediction!",
+                  "message": "{{ decision_explanation }}"
+                },
+                "action": "notify.persistent_notification"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JRTA64E6NPZFA836TTZ3KZ46",
+            "parent_id": "01JRTA64E6JW87SZ8J3KT40A73",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "6cb17bb469b0031d40d1e74d61cc6d93",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-14T14:10:24.326760+00:00",
+            "finish": "2025-04-14T14:10:24.330176+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "condition/0/entity_id/0",
+          "run_id": "6f54809166b48672bcea3d60cf8b9d67",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-04-15T04:55:42.205176+00:00",
+            "finish": "2025-04-15T04:55:42.205274+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-15T04:55:42.205207+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.energy_prediction_high_alert",
+                    "state": "on",
+                    "attributes": {
+                      "id": "energy_prediction_high_alert_12345",
+                      "last_triggered": "2025-04-14T14:10:24.326911+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Energy Prediction High Alert"
+                    },
+                    "last_changed": "2025-04-15T04:50:12.182463+00:00",
+                    "last_reported": "2025-04-15T04:50:12.182463+00:00",
+                    "last_updated": "2025-04-15T04:50:12.182463+00:00",
+                    "context": {
+                      "id": "01JRVWH32P85YCA39D1KBSYR50",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "numeric_state",
+                    "entity_id": "sensor.energy_consumption_predictor",
+                    "below": null,
+                    "above": 2.5,
+                    "from_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "1.077",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T08:55:12.196851",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.2413
+                            },
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": -0.2394
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0761
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": -0.0458
+                            },
+                            {
+                              "feature": "Appliance Type_Lights",
+                              "impact": 0.0226
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 1.08 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.241 kWh.\n- Appliance = 'Heater': moderately decreased prediction by 0.239 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.076 kWh.\n- Is_Low_Energy: slightly decreased prediction by 0.046 kWh.\n- Appliance = 'Lights': slightly increased prediction by 0.023 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Lights",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 1,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T08:55:12.175623"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T04:53:42.192280+00:00",
+                      "last_reported": "2025-04-15T04:55:12.197066+00:00",
+                      "last_updated": "2025-04-15T04:55:12.197066+00:00",
+                      "context": {
+                        "id": "01JRVWT825DHN60TY0R3JCESVB",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "3.455",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T08:55:42.204741",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": 2.0188
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.1394
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0734
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Outdoor Temperature (\u00b0C)",
+                              "impact": -0.0057
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.139 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Heater",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 1,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T08:55:42.182318"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T04:55:42.204957+00:00",
+                      "last_reported": "2025-04-15T04:55:42.204957+00:00",
+                      "last_updated": "2025-04-15T04:55:42.204957+00:00",
+                      "context": {
+                        "id": "01JRVWV5BW7JMNVVHBY5HPTTX0",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "description": "numeric state of sensor.energy_consumption_predictor"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-04-15T04:55:42.205230+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-04-15T04:55:42.205245+00:00",
+                "result": {
+                  "result": false,
+                  "state": "off",
+                  "wanted_state": "on"
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "energy_prediction_high_alert_12345",
+            "alias": "Energy Prediction High Alert",
+            "description": "Notify when predicted energy consumption is high AND AI control is enabled",
+            "mode": "single",
+            "trigger": [
+              {
+                "platform": "numeric_state",
+                "entity_id": "sensor.energy_consumption_predictor",
+                "above": 2.5
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.energy_ai_control_enabled",
+                "state": "on"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "prediction_value": "{{ trigger.to_state.state | float(0) | round(3) }}",
+                  "trigger_threshold": "{{ trigger.above | float(0) }}",
+                  "prediction_explanation_summary": "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}",
+                  "raw_inputs_attr": "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}",
+                  "target_appliance": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}",
+                  "current_temp": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Outdoor Temperature (\u00b0C)' in data %}{{ data['Outdoor Temperature (\u00b0C)'] }}{% else %}N/A{% endif %}",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              },
+              {
+                "variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh). Target Appliance: {{ target_appliance }}. Current Temp: {{ current_temp }}\u00b0C.\nReason for high prediction: {{ prediction_explanation_summary | replace('\\n', '\\n  ') }}\nAction Taken: {{ intended_action_desc }}\n"
+                }
+              },
+              {
+                "target": {
+                  "entity_id": "input_text.last_energy_ai_action_explanation"
+                },
+                "data": {
+                  "value": "{{ decision_explanation }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "data": {
+                  "title": "Energy AI Alert: High Prediction!",
+                  "message": "{{ decision_explanation }}"
+                },
+                "action": "notify.persistent_notification"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JRVWV5BX2S8MQA5PY04QAFWC",
+            "parent_id": "01JRVWV5BW7JMNVVHBY5HPTTX0",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "condition/0/entity_id/0",
+          "run_id": "6f54809166b48672bcea3d60cf8b9d67",
+          "state": "stopped",
+          "script_execution": "failed_conditions",
+          "timestamp": {
+            "start": "2025-04-15T04:55:42.205176+00:00",
+            "finish": "2025-04-15T04:55:42.205274+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "9c3f21fc3d018d5be8734150bcf2435d",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:01:12.250229+00:00",
+            "finish": "2025-04-15T05:01:12.252744+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-15T05:01:12.250254+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.energy_prediction_high_alert",
+                    "state": "on",
+                    "attributes": {
+                      "id": "energy_prediction_high_alert_12345",
+                      "last_triggered": "2025-04-14T14:10:24.326911+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Energy Prediction High Alert"
+                    },
+                    "last_changed": "2025-04-15T04:50:12.182463+00:00",
+                    "last_reported": "2025-04-15T04:50:12.182463+00:00",
+                    "last_updated": "2025-04-15T04:50:12.182463+00:00",
+                    "context": {
+                      "id": "01JRVWH32P85YCA39D1KBSYR50",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "numeric_state",
+                    "entity_id": "sensor.energy_consumption_predictor",
+                    "below": null,
+                    "above": 2.5,
+                    "from_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "0.312",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:00:42.245930",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": -0.6547
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.2443
+                            },
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": -0.2406
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": -0.0464
+                            },
+                            {
+                              "feature": "Appliance Type_Lights",
+                              "impact": -0.0029
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 0.31 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Fridge': significantly decreased prediction by 0.655 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.244 kWh.\n- Appliance = 'Heater': moderately decreased prediction by 0.241 kWh.\n- Is_Low_Energy: slightly decreased prediction by 0.046 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Fridge",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 1,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:00:42.223729"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:00:42.246177+00:00",
+                      "last_reported": "2025-04-15T05:00:42.246177+00:00",
+                      "last_updated": "2025-04-15T05:00:42.246177+00:00",
+                      "context": {
+                        "id": "01JRVX4AC6J8DC869S0E6C6VK2",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "3.455",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:01:12.249813",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": 2.0188
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.1395
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0734
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Outdoor Temperature (\u00b0C)",
+                              "impact": -0.0057
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Heater",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 1,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:01:12.227983"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:01:12.250026+00:00",
+                      "last_reported": "2025-04-15T05:01:12.250026+00:00",
+                      "last_updated": "2025-04-15T05:01:12.250026+00:00",
+                      "context": {
+                        "id": "01JRVX57NTZFYD6MHSYRW1ZDXF",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "description": "numeric state of sensor.energy_consumption_predictor"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-04-15T05:01:12.250271+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-04-15T05:01:12.250283+00:00",
+                "result": {
+                  "result": true,
+                  "state": "on",
+                  "wanted_state": "on"
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-15T05:01:12.250559+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JRVX57NT9ARVN3VGVW7K74JH",
+                    "parent_id": "01JRVX57NTZFYD6MHSYRW1ZDXF",
+                    "user_id": null
+                  },
+                  "prediction_value": 3.455,
+                  "trigger_threshold": 2.5,
+                  "prediction_explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                  "raw_inputs_attr": "{'Appliance Type': 'Heater', 'Outdoor Temperature (\u00b0C)': 20.0, 'Household Size': 1, 'Season': 'Spring/Fall', 'timestamp': Timestamp('2025-04-15 09:01:12.227983')}",
+                  "target_appliance": "Unknown",
+                  "current_temp": "N/A",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-04-15T05:01:12.251776+00:00",
+                "changed_variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-04-15T05:01:12.251985+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert.",
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-04-15T05:01:12.252431+00:00",
+                "result": {
+                  "params": {
+                    "domain": "notify",
+                    "service": "persistent_notification",
+                    "service_data": {
+                      "title": "Energy AI Alert: High Prediction!",
+                      "message": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "energy_prediction_high_alert_12345",
+            "alias": "Energy Prediction High Alert",
+            "description": "Notify when predicted energy consumption is high AND AI control is enabled",
+            "mode": "single",
+            "trigger": [
+              {
+                "platform": "numeric_state",
+                "entity_id": "sensor.energy_consumption_predictor",
+                "above": 2.5
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.energy_ai_control_enabled",
+                "state": "on"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "prediction_value": "{{ trigger.to_state.state | float(0) | round(3) }}",
+                  "trigger_threshold": "{{ trigger.above | float(0) }}",
+                  "prediction_explanation_summary": "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}",
+                  "raw_inputs_attr": "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}",
+                  "target_appliance": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}",
+                  "current_temp": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Outdoor Temperature (\u00b0C)' in data %}{{ data['Outdoor Temperature (\u00b0C)'] }}{% else %}N/A{% endif %}",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              },
+              {
+                "variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh). Target Appliance: {{ target_appliance }}. Current Temp: {{ current_temp }}\u00b0C.\nReason for high prediction: {{ prediction_explanation_summary | replace('\\n', '\\n  ') }}\nAction Taken: {{ intended_action_desc }}\n"
+                }
+              },
+              {
+                "target": {
+                  "entity_id": "input_text.last_energy_ai_action_explanation"
+                },
+                "data": {
+                  "value": "{{ decision_explanation }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "data": {
+                  "title": "Energy AI Alert: High Prediction!",
+                  "message": "{{ decision_explanation }}"
+                },
+                "action": "notify.persistent_notification"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JRVX57NT9ARVN3VGVW7K74JH",
+            "parent_id": "01JRVX57NTZFYD6MHSYRW1ZDXF",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "9c3f21fc3d018d5be8734150bcf2435d",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:01:12.250229+00:00",
+            "finish": "2025-04-15T05:01:12.252744+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "8d047e8229d44aad92032fce90bcfd55",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:05:28.100879+00:00",
+            "finish": "2025-04-15T05:05:28.103352+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-15T05:05:28.100949+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.energy_prediction_high_alert",
+                    "state": "on",
+                    "attributes": {
+                      "id": "energy_prediction_high_alert_12345",
+                      "last_triggered": "2025-04-15T05:01:12.250354+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Energy Prediction High Alert"
+                    },
+                    "last_changed": "2025-04-15T05:04:28.088879+00:00",
+                    "last_reported": "2025-04-15T05:04:28.088879+00:00",
+                    "last_updated": "2025-04-15T05:04:28.088879+00:00",
+                    "context": {
+                      "id": "01JRVXB6XR85YCA39D1KBSYR50",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "numeric_state",
+                    "entity_id": "sensor.energy_consumption_predictor",
+                    "below": null,
+                    "above": 2.5,
+                    "from_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "1.108",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:04:58.098609",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": -0.2401
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.2389
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0758
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Appliance Type_Lights",
+                              "impact": -0.0029
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 1.11 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': moderately decreased prediction by 0.240 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.239 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.076 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "HVAC",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:04:58.074610"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:04:28.071768+00:00",
+                      "last_reported": "2025-04-15T05:04:58.098870+00:00",
+                      "last_updated": "2025-04-15T05:04:58.098870+00:00",
+                      "context": {
+                        "id": "01JRVXC47JRHV6A0MYYMPGSVKC",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "3.455",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:05:28.100429",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": 2.0188
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.1395
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0734
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Outdoor Temperature (\u00b0C)",
+                              "impact": -0.0057
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Heater",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:05:28.075595"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:05:28.100651+00:00",
+                      "last_reported": "2025-04-15T05:05:28.100651+00:00",
+                      "last_updated": "2025-04-15T05:05:28.100651+00:00",
+                      "context": {
+                        "id": "01JRVXD1H4JK3H1J5Z9MY8YCQ1",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "description": "numeric state of sensor.energy_consumption_predictor"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-04-15T05:05:28.100974+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-04-15T05:05:28.100990+00:00",
+                "result": {
+                  "result": true,
+                  "state": "on",
+                  "wanted_state": "on"
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-15T05:05:28.101255+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JRVXD1H4NCF1ZNW6BCBGS34Q",
+                    "parent_id": "01JRVXD1H4JK3H1J5Z9MY8YCQ1",
+                    "user_id": null
+                  },
+                  "prediction_value": 3.455,
+                  "trigger_threshold": 2.5,
+                  "prediction_explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                  "raw_inputs_attr": "{'Appliance Type': 'Heater', 'Outdoor Temperature (\u00b0C)': 20.0, 'Household Size': 3, 'Season': 'Spring/Fall', 'timestamp': Timestamp('2025-04-15 09:05:28.075595')}",
+                  "target_appliance": "Unknown",
+                  "current_temp": "N/A",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-04-15T05:05:28.102388+00:00",
+                "changed_variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-04-15T05:05:28.102601+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert.",
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-04-15T05:05:28.103021+00:00",
+                "result": {
+                  "params": {
+                    "domain": "notify",
+                    "service": "persistent_notification",
+                    "service_data": {
+                      "title": "Energy AI Alert: High Prediction!",
+                      "message": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "energy_prediction_high_alert_12345",
+            "alias": "Energy Prediction High Alert",
+            "description": "Notify when predicted energy consumption is high AND AI control is enabled",
+            "mode": "single",
+            "trigger": [
+              {
+                "platform": "numeric_state",
+                "entity_id": "sensor.energy_consumption_predictor",
+                "above": 2.5
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.energy_ai_control_enabled",
+                "state": "on"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "prediction_value": "{{ trigger.to_state.state | float(0) | round(3) }}",
+                  "trigger_threshold": "{{ trigger.above | float(0) }}",
+                  "prediction_explanation_summary": "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}",
+                  "raw_inputs_attr": "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}",
+                  "target_appliance": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}",
+                  "current_temp": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Outdoor Temperature (\u00b0C)' in data %}{{ data['Outdoor Temperature (\u00b0C)'] }}{% else %}N/A{% endif %}",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              },
+              {
+                "variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh). Target Appliance: {{ target_appliance }}. Current Temp: {{ current_temp }}\u00b0C.\nReason for high prediction: {{ prediction_explanation_summary | replace('\\n', '\\n  ') }}\nAction Taken: {{ intended_action_desc }}\n"
+                }
+              },
+              {
+                "target": {
+                  "entity_id": "input_text.last_energy_ai_action_explanation"
+                },
+                "data": {
+                  "value": "{{ decision_explanation }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "data": {
+                  "title": "Energy AI Alert: High Prediction!",
+                  "message": "{{ decision_explanation }}"
+                },
+                "action": "notify.persistent_notification"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JRVXD1H4NCF1ZNW6BCBGS34Q",
+            "parent_id": "01JRVXD1H4JK3H1J5Z9MY8YCQ1",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "8d047e8229d44aad92032fce90bcfd55",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:05:28.100879+00:00",
+            "finish": "2025-04-15T05:05:28.103352+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "2c076a6cdaae4ee19f1e6fd5c1ab2b57",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:07:58.062528+00:00",
+            "finish": "2025-04-15T05:07:58.065104+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-15T05:07:58.062584+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.energy_prediction_high_alert",
+                    "state": "on",
+                    "attributes": {
+                      "id": "energy_prediction_high_alert_12345",
+                      "last_triggered": "2025-04-15T05:05:28.101062+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Energy Prediction High Alert"
+                    },
+                    "last_changed": "2025-04-15T05:06:28.070446+00:00",
+                    "last_reported": "2025-04-15T05:06:28.070446+00:00",
+                    "last_updated": "2025-04-15T05:06:28.070446+00:00",
+                    "context": {
+                      "id": "01JRVXEW36R6DJM0MKTWWWZJ9A",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "numeric_state",
+                    "entity_id": "sensor.energy_consumption_predictor",
+                    "below": null,
+                    "above": 2.5,
+                    "from_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "1.108",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:07:28.067677",
+                        "prediction_time_sec": 0.03,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": -0.2401
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.2389
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0758
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Appliance Type_Lights",
+                              "impact": -0.0029
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 1.11 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': moderately decreased prediction by 0.240 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.239 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.076 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "HVAC",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:07:28.038528"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:06:28.034962+00:00",
+                      "last_reported": "2025-04-15T05:07:28.067947+00:00",
+                      "last_updated": "2025-04-15T05:07:28.067947+00:00",
+                      "context": {
+                        "id": "01JRVXGPP3Q8R39XHWEB7Y990V",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.energy_consumption_predictor",
+                      "state": "3.455",
+                      "attributes": {
+                        "status": "OK",
+                        "artifact_status": "Loaded",
+                        "base_value": 1.501,
+                        "last_updated": "2025-04-15T09:07:58.062071",
+                        "prediction_time_sec": 0.02,
+                        "explanation_details": {
+                          "status": "OK",
+                          "top_factors_detail": [
+                            {
+                              "feature": "Appliance Type_Heater",
+                              "impact": 2.0188
+                            },
+                            {
+                              "feature": "Appliance Type_Air Conditioning",
+                              "impact": -0.1395
+                            },
+                            {
+                              "feature": "Appliance Type_Fridge",
+                              "impact": 0.0734
+                            },
+                            {
+                              "feature": "Is_Low_Energy",
+                              "impact": 0.0134
+                            },
+                            {
+                              "feature": "Outdoor Temperature (\u00b0C)",
+                              "impact": -0.0057
+                            }
+                          ],
+                          "shap_calc_time_sec": 0.01
+                        },
+                        "explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                        "raw_inputs": {
+                          "Appliance Type": "Heater",
+                          "Outdoor Temperature (\u00b0C)": 20.0,
+                          "Household Size": 3,
+                          "Season": "Spring/Fall",
+                          "timestamp": "2025-04-15T09:07:58.038961"
+                        },
+                        "error": null,
+                        "unit_of_measurement": "kWh",
+                        "attribution": "Energy prediction based on XGBoost model",
+                        "icon": "mdi:chart-line",
+                        "friendly_name": "Energy Consumption Predictor"
+                      },
+                      "last_changed": "2025-04-15T05:07:58.062297+00:00",
+                      "last_reported": "2025-04-15T05:07:58.062297+00:00",
+                      "last_updated": "2025-04-15T05:07:58.062297+00:00",
+                      "context": {
+                        "id": "01JRVXHKZENCF1ZNW6BCBGS34Q",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "description": "numeric state of sensor.energy_consumption_predictor"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-04-15T05:07:58.062609+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-04-15T05:07:58.062624+00:00",
+                "result": {
+                  "result": true,
+                  "state": "on",
+                  "wanted_state": "on"
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-15T05:07:58.062895+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JRVXHKZEQ6HCA9NE2QWS48G8",
+                    "parent_id": "01JRVXHKZENCF1ZNW6BCBGS34Q",
+                    "user_id": null
+                  },
+                  "prediction_value": 3.455,
+                  "trigger_threshold": 2.5,
+                  "prediction_explanation_summary": "Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\nKey factors influencing this prediction:\n- Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n- Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n- Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n- Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n- Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.",
+                  "raw_inputs_attr": "{'Appliance Type': 'Heater', 'Outdoor Temperature (\u00b0C)': 20.0, 'Household Size': 3, 'Season': 'Spring/Fall', 'timestamp': Timestamp('2025-04-15 09:07:58.038961')}",
+                  "target_appliance": "Unknown",
+                  "current_temp": "N/A",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-04-15T05:07:58.064083+00:00",
+                "changed_variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-04-15T05:07:58.064296+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert.",
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.last_energy_ai_action_explanation"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-04-15T05:07:58.064757+00:00",
+                "result": {
+                  "params": {
+                    "domain": "notify",
+                    "service": "persistent_notification",
+                    "service_data": {
+                      "title": "Energy AI Alert: High Prediction!",
+                      "message": "High energy prediction triggered action. Prediction: 3.455 kWh (Threshold: 2.5 kWh). Target Appliance: Unknown. Current Temp: N/A\u00b0C.\nReason for high prediction: Predicted consumption: 3.46 kWh (compared to a baseline average of 1.50 kWh).\n  Key factors influencing this prediction:\n  - Appliance = 'Heater': significantly increased prediction by 2.019 kWh.\n  - Appliance = 'Air Conditioning': moderately decreased prediction by 0.140 kWh.\n  - Appliance = 'Fridge': slightly increased prediction by 0.073 kWh.\n  - Is_Low_Energy: slightly increased prediction by 0.013 kWh.\n  - Outdoor Temperature (\u00b0C) (20.0): slightly decreased prediction by 0.006 kWh.\nAction Taken: Sending a notification alert."
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "energy_prediction_high_alert_12345",
+            "alias": "Energy Prediction High Alert",
+            "description": "Notify when predicted energy consumption is high AND AI control is enabled",
+            "mode": "single",
+            "trigger": [
+              {
+                "platform": "numeric_state",
+                "entity_id": "sensor.energy_consumption_predictor",
+                "above": 2.5
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.energy_ai_control_enabled",
+                "state": "on"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "prediction_value": "{{ trigger.to_state.state | float(0) | round(3) }}",
+                  "trigger_threshold": "{{ trigger.above | float(0) }}",
+                  "prediction_explanation_summary": "{{ state_attr('sensor.energy_consumption_predictor', 'explanation_summary') | default('Details unavailable.') }}",
+                  "raw_inputs_attr": "{{ state_attr('sensor.energy_consumption_predictor', 'raw_inputs') }}",
+                  "target_appliance": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Appliance Type' in data %}{{ data['Appliance Type'] }}{% else %}Unknown{% endif %}",
+                  "current_temp": "{% set data = raw_inputs_attr %} {% if data is mapping and 'Outdoor Temperature (\u00b0C)' in data %}{{ data['Outdoor Temperature (\u00b0C)'] }}{% else %}N/A{% endif %}",
+                  "intended_action_desc": "Sending a notification alert."
+                }
+              },
+              {
+                "variables": {
+                  "decision_explanation": "High energy prediction triggered action. Prediction: {{ prediction_value }} kWh (Threshold: {{ trigger_threshold }} kWh). Target Appliance: {{ target_appliance }}. Current Temp: {{ current_temp }}\u00b0C.\nReason for high prediction: {{ prediction_explanation_summary | replace('\\n', '\\n  ') }}\nAction Taken: {{ intended_action_desc }}\n"
+                }
+              },
+              {
+                "target": {
+                  "entity_id": "input_text.last_energy_ai_action_explanation"
+                },
+                "data": {
+                  "value": "{{ decision_explanation }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "data": {
+                  "title": "Energy AI Alert: High Prediction!",
+                  "message": "{{ decision_explanation }}"
+                },
+                "action": "notify.persistent_notification"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JRVXHKZEQ6HCA9NE2QWS48G8",
+            "parent_id": "01JRVXHKZENCF1ZNW6BCBGS34Q",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "2c076a6cdaae4ee19f1e6fd5c1ab2b57",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-15T05:07:58.062528+00:00",
+            "finish": "2025-04-15T05:07:58.065104+00:00"
+          },
+          "domain": "automation",
+          "item_id": "energy_prediction_high_alert_12345",
+          "trigger": "numeric state of sensor.energy_consumption_predictor"
+        }
+      }
+    ]
+  }
+}

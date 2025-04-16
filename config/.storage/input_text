@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_text",
+  "data": {
+    "items": [
+      {
+        "id": "last_energy_ai_action_explanation",
+        "name": "Last Energy AI Action Explanation",
+        "max": 100,
+        "mode": "text",
+        "min": 0
+      }
+    ]
+  }
+}

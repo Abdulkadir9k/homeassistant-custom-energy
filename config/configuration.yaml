@@ -1,0 +1,83 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.cloud: debug
+
+# --- ADDED/MERGED SECTIONS START HERE ---
+
+input_select: # New top-level key
+  appliance_type:
+    name: Appliance Type Select
+    options:
+      - HVAC
+      - Fridge
+      - Lights
+      - Heater
+      - Fan
+      - Laptop
+      # Add ALL other appliance types your model was trained on
+    initial: HVAC
+    icon: mdi:power-plug
+
+input_number: # New top-level key
+  household_size:
+    name: Household Size Input
+    min: 1
+    max: 10
+    step: 1
+    initial: 3
+    unit_of_measurement: "people"
+    mode: box
+    icon: mdi:account-group
+
+  outdoor_temperature:
+    name: Outdoor Temperature Input
+    min: -20
+    max: 55
+    step: 0.1
+    initial: 20.0
+    unit_of_measurement: "°C"
+    mode: box
+    icon: mdi:thermometer
+
+input_boolean:
+  energy_ai_control_enabled:
+    name: Enable Energy AI Control Actions
+    initial: off # Start with AI control disabled by default for safety
+    icon: mdi:robot-confused # Or mdi:auto-fix, mdi:robot-happy
+
+input_text:
+  last_energy_ai_action_explanation: # Entity ID will be input_text.last_energy_ai_action_explanation
+    name: Last Energy AI Action Explanation
+    initial: "No actions taken yet." # Default text
+    # max: 255 # Default max length is usually 255 characters
+    icon: mdi:text-box-check-outline
+
+sensor: # Existing or new top-level key
+  # --- Keep any existing sensors you already have here ---
+  # - platform: template
+  #   sensors:
+  #     some_template_sensor:
+  #       ...
+  # - platform: command_line
+  #   sensors:
+  #     another_sensor:
+  #       ...
+
+  # --- Add the new energy_predictor platform configuration ---
+  - platform: energy_predictor
+    # scan_interval: 300 # Optional override
+
+# --- ADDED/MERGED SECTIONS END HERE ---

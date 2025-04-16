@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "minor_version": 5,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {"created_at":"2025-03-03T20:30:02.740386+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"sun","entry_id":"01JNEV72ZM8ED7EAPAVKFAJTCW","minor_version":1,"modified_at":"2025-03-03T20:30:02.740389+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"import","subentries":[],"title":"Sun","unique_id":null,"version":1},
+      {"created_at":"2025-03-04T11:03:37.960043+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"shopping_list","entry_id":"01JNGD6NQ800KMW22412JQNDCN","minor_version":1,"modified_at":"2025-03-04T11:03:37.960048+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Shopping list","unique_id":"shopping_list","version":1},
+      {"created_at":"2025-03-04T11:03:40.294881+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"radio_browser","entry_id":"01JNGD6R06FNBB72CYQY7HM90Y","minor_version":1,"modified_at":"2025-03-04T11:03:40.294883+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Radio Browser","unique_id":null,"version":1},
+      {"created_at":"2025-03-04T11:03:40.953051+00:00","data":{"language":"en","tld":"com"},"disabled_by":null,"discovery_keys":{},"domain":"google_translate","entry_id":"01JNGD6RMSQ6Z7GDFN8D1VK5JF","minor_version":1,"modified_at":"2025-03-04T11:03:40.953054+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Google Translate text-to-speech","unique_id":null,"version":1},
+      {"created_at":"2025-03-04T11:03:41.405962+00:00","data":{"track_home":true},"disabled_by":null,"discovery_keys":{},"domain":"met","entry_id":"01JNGD6S2XMC5TET8STHTZ0XEP","minor_version":1,"modified_at":"2025-03-04T11:03:41.405964+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Home","unique_id":null,"version":1}
+    ]
+  }
+}

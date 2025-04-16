@@ -1,0 +1,16 @@
+{
+    "domain": "energy_predictor",
+    "name": "Energy Consumption Predictor",
+    "version": "1.1.0",
+    "requirements": [
+      "xgboost==2.1.4",
+      "scikit-learn==1.6.1",
+      "pandas==2.2.2",
+      "shap==0.47.1",
+      "joblib==1.4.2"
+    ],
+    "dependencies": [],
+    "codeowners": ["@Abdulkadir9k"],
+    "iot_class": "calculated",
+    "config_flow": false
+  }
